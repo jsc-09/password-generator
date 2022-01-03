@@ -8,7 +8,19 @@ let specialChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
 // Write password to the #password input
 function writePassword() {
-  let numChar = prompt("How many characters do you want it to be?");
+  let numChar = 0;
+  while (numChar < 8 || numChar > 128 ) {
+  numChar = prompt("How many characters do you want it to be? (choose between 8–128 characters)");
+  }
+
+ //option 2
+ /* let selectNum = false;
+  while (selectNum == false) {
+    numChar = prompt("How many characters do you want it to be? (choose between 8–128 characters)");
+  if (numChar > 8 && numChar < 128 ) 
+    selectNum = true;
+  }*/
+
   let wantNum = confirm("Do you want to include numerical characters?");
   let wantLowerCase = confirm("Do you want to include lower case letters?");
   let wantUpperCase = confirm("Do you want to include upper case letters");
